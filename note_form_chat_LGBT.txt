@@ -1,0 +1,24 @@
+//cây thư mục
+deepfake-detector/
+│
+├── backend/                # Xử lý AI + API
+│   ├── main.py             # FastAPI server (nhận video, chạy model, trả JSON)
+│   ├── models/             # Chứa model deepfake đã tải về
+│   │   └── deepfake_model.onnx
+│   ├── utils/              # Hàm tiện ích
+│   │   └── video_utils.py  # Hàm đọc video, xử lý frame
+│   └── requirements.txt    # Thư viện backend (fastapi, uvicorn, opencv, onnxruntime,...)
+│
+├── frontend/               # Vue app (UI cho người dùng)
+│   ├── public/             # Static files
+│   ├── src/
+│   │   ├── assets/         # Ảnh, icon, css
+│   │   ├── components/     # Vue components (UploadForm.vue, VideoPlayer.vue,...)
+│   │   ├── views/          # Trang chính (Home.vue)
+│   │   ├── App.vue         # Root component
+│   │   └── main.js         # Entry file Vue
+│   ├── package.json        # Thư viện frontend (vue, axios,...)
+│   └── vite.config.js      # Config cho Vite
+│
+├── docker-compose.yml      # (optional) Deploy nhanh cả backend & frontend
+└── README.md               # Hướng dẫn chạy
